@@ -1,13 +1,13 @@
 import dotenv
 dotenv.load_dotenv()
 
-import os
-from huggingface_hub import login
-login(token=os.getenv("HUGGINGFACEHUB_API_TOKEN"))
+# import os
+# from huggingface_hub import login
+# login(token=os.getenv("HUGGINGFACEHUB_API_TOKEN"))
 
 from langchain_huggingface import HuggingFacePipeline
 llm = HuggingFacePipeline.from_model_id(
-    model_id="google/gemma-3-1b-it",
+    model_id="microsoft/Phi-4-mini-instruct",
     task="text-generation",
 )
 
