@@ -10,3 +10,8 @@ prompt.save("capital.yaml")
 from langchain_core.prompts import load_prompt
 prompt = load_prompt("capital.json")
 prompt = load_prompt("capital.yaml")
+
+from langchain import hub
+prompt = hub.pull("hardkothari/prompt-maker")
+
+print(prompt)

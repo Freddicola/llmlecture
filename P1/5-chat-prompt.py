@@ -15,3 +15,11 @@ print(prompt)
 
 response = prompt.invoke({ "name":"테디", "user_input":"당신의 이름은 무엇입니까?" })
 print(response)
+
+from langchain.chat_models import init_chat_model
+llm = init_chat_model("gemini-2.0-flash", model_provider="google_genai")
+
+chain = prompt | llm
+result = chain.invoke({ "name":"테디", "user_input":"당신의 이름은 무엇입니까?" })
+print(result.content)  # Output: "제 이름은 테디입니다." (or similar, depending on the model's response)
+
