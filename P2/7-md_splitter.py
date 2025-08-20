@@ -1,4 +1,4 @@
-with open("../data/langchain.md", "r", encoding="utf-8") as f:
+with open("./data/langchain.md", "r", encoding="utf-8") as f:
     file = f.read()
 
 from langchain_text_splitters import MarkdownHeaderTextSplitter

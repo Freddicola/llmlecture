@@ -1,6 +1,6 @@
 from langchain_community.document_loaders.csv_loader import CSVLoader
 
-loader = CSVLoader(file_path="../data/restaurant_reviews.csv", encoding="utf-8")
+loader = CSVLoader(file_path="./data/restaurant_reviews.csv", encoding="utf-8")
 
 docs = loader.load()
 

@@ -1,9 +1,10 @@
 import pandas as pd     # Importing pandas for data manipulation
-df = pd.read_csv('../data/restaurant_reviews.csv')
+df = pd.read_csv('./data/restaurant_reviews.csv')
 
 from sqlalchemy import create_engine
 engine = create_engine("sqlite:///restaurant.db")
 
+# DB에 저장하기 위해 DataFrame을 SQL 테이블(engine)로 변환
 df.to_sql("restaurant", engine, if_exists="replace", index=False)
 
 from langchain_community.utilities import SQLDatabase
