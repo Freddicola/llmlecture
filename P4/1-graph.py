@@ -5,9 +5,13 @@ class CounterState(TypedDict):
 from langgraph.graph import StateGraph, START, END
 graph = StateGraph(CounterState)
 
+
+# 함수는 node이다.
 def increment(state: CounterState) -> CounterState:
     state["counter"] += 1
     return state
+
+print(increment.__name__)
 graph.add_node("increment", increment)
 
 # graph.set_entry_point("increment")
